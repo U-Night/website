@@ -1,36 +1,27 @@
-# Astro Starter Kit: Basics
+<h1 align="center">U-Night Website</h1>
 
+## 🚀 Start the project
+
+First, clone the repo. (Either on your system or using an online IDE)
 ```sh
-pnpm create astro@latest -- --template basics
+git clone https://github.com/U-Night/website
+cd website
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+Install the dependendies
+```sh
+pnpm install
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Run the dev server
+```sh
+pnpm run dev
+```
 
 ## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+All the commands you should be aware of to run and edit the project
+smoothly.
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
@@ -39,8 +30,11 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm build`           | Build your production site to `./dist/`          |
 | `pnpm preview`         | Preview your build locally, before deploying     |
 | `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `pnpm astro add <integration>`       | Adds `<integration>` to astro |
 | `pnpm astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## 👀 Licenses
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+[Astro](https://astro.build) is licensed under the GNU GPL v3.0+
+Our code is licensed under our [custom license](./LICENSE.md)
+All **our** assets (logos, icons, illustrations, ...) is licensed under our [custom assets license](./LICENSE_ASSETS.md)
