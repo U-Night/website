@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Jersey+25&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 *{
     padding: 0;
@@ -10,20 +10,29 @@ body {
     max-width: 100dvw;
     max-height: 100dvh;
     overflow: hidden;
+    // Everything is now centered
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.wrapper {
-    // Center it (yes I actually know how to center a div)
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.wrapper {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     .notfound {
         display:flex;
 
         font-family: 'Jersey 25', Arial;
         font-size: 20rem;
+
+        @media screen and (max-width: 768px) {
+            font-size: 10rem;
+        }
+
         color: white;
 
         width: fit-content;
@@ -31,27 +40,76 @@ body {
         &>div{
             img {
                 width: 200px;
+                
+                @media screen and (max-width: 768px) {
+                    width: 100px;
+                }
             }
         }
     }
 
     p {
-        font-family: Roboto, Arial, Helvetica, sans-serif;
+        font-family: Kanit, Arial, Helvetica, sans-serif;
+        font-size: 1.2rem;
         color: white;
         text-align: center;
+
+        @media screen and (max-width: 768px) {
+            font-size: 0.8rem;
+        }
+
     }
 
 }
 
+// Fixed background wrapper
+.background-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+// Rotating element with scrolling textures
 .garry-background {
     position: absolute;
     width: 300%;
     height: 300%;
-    top: -75%;
-    left: -75%;
-    background:  url('../assets/garry_texture_seamless.png') repeat center;
+    top: -100%;
+    left: -100%;
+    transform: rotate(-10deg);
+
+    display: flex;
+    flex-direction: column;
+
+    animation: scroll-diagonal 100s linear infinite;
+}
+
+// Garry tile that fills the background
+.garry-tile {
+    flex: none;
+    width: 100%;
+    height: 200%;
+    background: url('../assets/garry_texture_seamless.png') repeat;
     background-size: 10%;
-    transform: rotate(-20deg);
     filter: opacity(20%);
 }
 
+
+$angle-deg: -10; // This is where you can change the angle of the diagonal scroll
+$angle-rad: $angle-deg * 3.14159265 / 180; // Convert degrees to radians
+$move-x: sin($angle-rad) * 0.5; // Adjust the multiplier to control the horizontal movement
+$move-y: cos($angle-rad) * -1; // Adjust the multiplier to control the vertical movement
+
+@keyframes scroll-diagonal {
+    0% {
+        transform: translate(0%, 0%) rotate(#{$angle-deg}deg);
+    }
+    100% {
+        transform: translate(#{100% * $move-x}, #{100% * $move-y}) rotate(#{$angle-deg}deg); // Adjust the translation based on the angle
+    }
+}
