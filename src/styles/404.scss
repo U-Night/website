@@ -29,13 +29,15 @@ body {
         font-family: 'Jersey 25', Arial;
         font-size: 20rem;
 
+        color: white;
+
+        width: fit-content;
+        
+
         @media screen and (max-width: 768px) {
             font-size: 10rem;
         }
 
-        color: white;
-
-        width: fit-content;
         
         &>div{
             img {
@@ -101,7 +103,7 @@ body {
 
 
 $angle-deg: -10; // This is where you can change the angle of the diagonal scroll
-$angle-rad: $angle-deg * 3.14159265 / 180; // Convert degrees to radians
+$angle-rad: calc($angle-deg * 3.14159265 / 180); // Convert degrees to radians
 $move-x: sin($angle-rad) * 0.5; // Adjust the multiplier to control the horizontal movement
 $move-y: cos($angle-rad) * -1; // Adjust the multiplier to control the vertical movement
 
