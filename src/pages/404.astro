@@ -1,26 +1,29 @@
 ---
 import unightLogo from "../assets/unight.png";
-import '../styles/404.scss';
-import garryTexture from '../assets/garry_texture_seamless.png';
+import "../styles/404.scss";
+import garryTexture from "../assets/garry_texture_seamless.png";
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>U-Night - Not found</title>
-    </head>
-    <body>
-        <div class="garry-background">
-        </div>
-        <div class="wrapper">
-            <div class="notfound">
-                <div>4</div>
-                <div><img src={unightLogo.src} alt="0" /></div>
-                <div>4</div>
-            </div>
-            <p>OOPS. Looks like the page you're looking for does't exist anymore</p>
-        </div>
-        
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>U-Night - Not found</title>
+  </head>
+  <body>
+    <div class="background-wrapper">
+      <div class="garry-background">
+        <div class="garry-tile"></div>
+      </div>
+    </div>
+  </body>
+  <div class="wrapper">
+    <div class="notfound">
+      <div>4</div>
+      <div><img src={unightLogo.src} alt="0" /></div>
+      <div>4</div>
+    </div>
+    <p>OOPS. Looks like the page you're looking for doesn't exist.</p>
+  </div>
 </html>
