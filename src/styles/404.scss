@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    // background-color: #172057;
+    max-width: 100dvw;
+    max-height: 100dvh;
+    overflow: hidden;
+}
+body::before {
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: -75%;
+    left: -75%;
+    z-index: -1;
+    background:  url('../assets/garry_texture_seamless.png') repeat center; /* No-repeat background */
+    background-color: #172057; /* Fallback background color */
+    background-size: 15%; /* Cover entire pseudo-element area */
+    transform: rotate(-20deg); /* css rotate background image, css background rotate */
+}
+
+.wrapper {
+    // Center it (yes I actually know how to center a div)
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .notfound {
+        display:flex;
+
+        font-family: 'Jersey 25', Arial;
+        font-size: 20rem;
+        color: white;
+
+        width: fit-content;
+        
+        &>div{
+            img {
+                width: 200px;
+            }
+        }
+    }
+
+    p {
+        font-family: Roboto, Arial, Helvetica, sans-serif;
+        color: white;
+        text-align: center;
+    }
+
+}
