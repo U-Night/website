@@ -6,23 +6,10 @@
 }
 
 body {
-    // background-color: #172057;
+    background-color: #172057;
     max-width: 100dvw;
     max-height: 100dvh;
     overflow: hidden;
-}
-body::before {
-    content: "";
-    position: absolute;
-    width: 300%;
-    height: 300%;
-    top: -75%;
-    left: -75%;
-    z-index: -1;
-    background:  url('../assets/garry_texture_seamless.png') repeat center; /* No-repeat background */
-    background-color: #172057; /* Fallback background color */
-    background-size: 15%; /* Cover entire pseudo-element area */
-    transform: rotate(-20deg); /* css rotate background image, css background rotate */
 }
 
 .wrapper {
@@ -55,3 +42,16 @@ body::before {
     }
 
 }
+
+.garry-background {
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: -75%;
+    left: -75%;
+    background:  url('../assets/garry_texture_seamless.png') repeat center;
+    background-size: 10%;
+    transform: rotate(-20deg);
+    filter: opacity(20%);
+}
+
