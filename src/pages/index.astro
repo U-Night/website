@@ -1,8 +1,12 @@
 ---
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import campvan from "../assets/campvan.png"
 ---
 
 <Layout pageTitle="U-Night - Home">
-	<Welcome />
+	<section class="bg-white w-full p-0">
+		<!-- Kakou kakou -->
+		<img src={campvan.src} alt="Camping car and fireplace" class="w-full xl:h-[80dvh] object-cover">
+	</section>
 </Layout>
