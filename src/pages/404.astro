@@ -1,7 +1,8 @@
 ---
 import unightLogo from "../assets/unight.png";
 import "../styles/404.scss";
-import garryTexture from "../assets/garry_texture_seamless.png";
+import garryCanvasBgTexture from "../assets/garry-ko-canvas-bg.png";
+import garryKoSprite from "../assets/garry-ko.png";
 ---
 
 <!doctype html>
@@ -25,5 +26,17 @@ import garryTexture from "../assets/garry_texture_seamless.png";
       <div>4</div>
     </div>
     <p>OOPS. Looks like the page you're looking for doesn't exist.</p>
+    <div class="garry-ko">
+      <img
+        class="garry-ko-canvas-bg"
+        src={garryCanvasBgTexture.src}
+        alt="Garry KO canvas background texture"
+      />
+      <img
+        class="garry-ko-sprite"
+        src={garryKoSprite.src}
+        alt="Knocked out Garry texture"
+      />
+    </div>
   </div>
 </html>
