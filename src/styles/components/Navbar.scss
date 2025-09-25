@@ -6,6 +6,7 @@ nav {
     justify-content: space-between;
     padding-right: 5rem;
 
+
     .logo {
         width: 10rem;
         height: 10rem;
@@ -78,6 +79,31 @@ nav {
         .logo {
             width: 8rem;
             height: 8rem;
+            display: flex;
+            place-items: center;
+            place-content: center;
+            padding: 1rem;
+            border-radius: 50%;
+            position: relative;
+            background-color: $bgDarkColor;
+            // top: 240px;
+            
+            img {
+                aspect-ratio: 535/476;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    nav {
+        .menu, .socials {
+            display: none;
+        }
+        
+        .logo {
+            width: 5rem;
+            height: 5rem;
             display: flex;
             place-items: center;
             place-content: center;
