@@ -64,6 +64,43 @@ body {
 
 }
 
+
+.garry-ko {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 40vw;
+    height: auto;
+    z-index: -1;
+    filter: drop-shadow(0 0 100px rgb(0, 0, 0));
+    display: grid; // Stack children
+    overflow: visible;
+
+    @media screen and (max-width: 500px) {
+        width: 70vw;
+    }
+
+    .garry-ko-canvas-bg {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        z-index: 1;
+    }
+
+    .garry-ko-sprite {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 80%;
+        height: auto;
+        object-fit: contain;
+        z-index: 2;
+    }
+}
+
+
 // Fixed background wrapper
 .background-wrapper {
     position: fixed;
