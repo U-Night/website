@@ -9,7 +9,7 @@ const topRect = async (next: any, isOpen: boolean) => {
   // Stage 1 - Move to center first
   await next({
     transform: isOpen
-      ? "translate(0px, 0px) rotate(0deg)"
+      ? "translate(0px, 8.75px) rotate(0deg)"
       : "translate(0px, 0px) rotate(0deg)",
     config: linearConfig,
   });
@@ -17,7 +17,7 @@ const topRect = async (next: any, isOpen: boolean) => {
   // Stage 2 - Rotate while staying at center
   await next({
     transform: isOpen
-      ? "translate(0px, 8.5px) rotate(-45deg)"
+      ? "translate(0px, 8.75px) rotate(-45deg)"
       : "translate(0px, 0px) rotate(0deg)",
     config: config.wobbly,
   });
@@ -39,7 +39,7 @@ const bottomRect = async (next: any, isOpen: boolean) => {
   // Stage 1 - Move to center first  
   await next({
     transform: isOpen
-      ? "translate(0px, 0px) rotate(0deg)"
+      ? "translate(0px, -8.75px) rotate(0deg)"
       : "translate(0px, 0px) rotate(0deg)",
     config: linearConfig,
   });
@@ -47,7 +47,7 @@ const bottomRect = async (next: any, isOpen: boolean) => {
   // Stage 2 - Rotate while staying at center
   await next({
     transform: isOpen
-      ? "translate(0px, -8.5px) rotate(45deg)"
+      ? "translate(0px, -8.75px) rotate(45deg)"
       : "translate(0px, 0px) rotate(0deg)",
     config: config.wobbly,
   });
