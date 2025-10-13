@@ -87,7 +87,7 @@ const BurgerMenu = memo(({ isOpen, onClick }: { isOpen: boolean; onClick: () => 
             rx="1"
             fill={"#FFF"}
             style={{
-              transformOrigin: `12px ${index * 9 + 1}px`, // Centre de rotation au milieu de chaque barre
+              transformOrigin: `12px ${index * 9 + 1}px`, // Center of rotation in the middle of each bar
               ...props
             }}
           />
