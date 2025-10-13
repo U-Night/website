@@ -1,4 +1,4 @@
-$bgDarkColor: #020411;
+@import "../vars.scss";
 @import url("https://fonts.googleapis.com/css2?family=Jersey+25&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 nav {
@@ -9,25 +9,29 @@ nav {
   .logo {
     width: 10rem;
     height: 10rem;
-    display: flex;
+    display: block;
     place-items: center;
     place-content: center;
     padding: 1.5rem;
     border-radius: 50%;
-    position: relative;
+    z-index: 10000000;
     background-color: $bgDarkColor;
-    // top: 240px;
+    position: absolute;
 
     img {
       aspect-ratio: 535/476;
     }
   }
 
+  .nav-wrapper {
+    margin-left: 10rem;
+  }
+
   .menu {
     height: 100%;
     place-content: center;
     text-transform: uppercase;
-    padding-left: 2rem;
+    padding-left: 1rem;
 
     li {
       height: fit-content;
@@ -74,6 +78,8 @@ nav {
 
 @media screen and (max-width: 768px) {
   nav {
+    padding-right: 1rem;
+
     .menu,
     .socials {
       display: none;
@@ -82,6 +88,8 @@ nav {
     .burgerIcon {
       display: block;
       place-self: center;
+      position: absolute;
+      right: 1.1rem;
     }
 
     .logo {
@@ -90,9 +98,8 @@ nav {
       display: flex;
       place-items: center;
       place-content: center;
-      padding: 1rem;
       border-radius: 50%;
-      position: relative;
+      position: absolute;
       background-color: $bgDarkColor;
       // top: 240px;
 
@@ -100,6 +107,44 @@ nav {
         aspect-ratio: 535/476;
       }
     }
+
+    // Ouverture du menu mobile
+    &.open {
+      .nav-wrapper {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 5rem;
+        right: 0;
+        width: 100%;
+        background-color: $bgDarkColor;
+        z-index: 10;
+
+        .socials {
+          display: flex;
+          justify-content: center;
+          padding-bottom: .5rem;
+        }
+
+        .menu {
+          padding-left: 0;
+          display: flex;
+          align-items: center;
+
+          ul {
+            flex-direction: column;
+            align-items: center;
+            gap: -.5rem;
+          }
+          li {
+            padding: .5rem 0;
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+
+
   }
 }
 
@@ -118,10 +163,9 @@ nav {
       place-content: center;
       padding: 1rem;
       border-radius: 50%;
-      position: relative;
+      position: absolute;
       background-color: $bgDarkColor;
-      // top: 240px;
-
+      
       img {
         aspect-ratio: 535/476;
       }
