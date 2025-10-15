@@ -1,0 +1,174 @@
+@import "../vars.scss";
+@import url("https://fonts.googleapis.com/css2?family=Jersey+25&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+nav {
+  height: 5rem;
+  justify-content: space-between;
+  padding-right: 5rem;
+
+  .logo {
+    width: 10rem;
+    height: 10rem;
+    display: block;
+    place-items: center;
+    place-content: center;
+    padding: 1.5rem;
+    border-radius: 50%;
+    z-index: 10000000;
+    background-color: $bgDarkColor;
+    position: absolute;
+
+    img {
+      aspect-ratio: 535/476;
+    }
+  }
+
+  .nav-wrapper {
+    margin-left: 10rem;
+  }
+
+  .menu {
+    height: 100%;
+    place-content: center;
+    text-transform: uppercase;
+    padding-left: 1rem;
+
+    li {
+      height: fit-content;
+      padding: 0.5rem;
+      font-size: 1.3rem;
+      font-family: "Jersey 25", Arial, Helvetica, sans-serif;
+
+      a {
+        transition: color 300ms ease;
+
+        &:hover {
+          color: oklch(68.1% 0.162 75.834);
+        }
+      }
+    }
+  }
+
+  .burgerIcon {
+    display: none;
+    overflow: visible; // Ensures the animation is visible
+  }
+
+  .socials {
+    height: 100%;
+    place-content: center;
+
+    li {
+      padding: 0.3rem;
+
+      a {
+        transition: color 300ms ease;
+        &:hover {
+          color: oklch(68.1% 0.162 75.834);
+        }
+
+        & > svg {
+          width: 1.3rem;
+          height: 1.3rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    padding-right: 1rem;
+
+    .menu,
+    .socials {
+      display: none;
+    }
+
+    .burgerIcon {
+      display: block;
+      place-self: center;
+      position: absolute;
+      right: 1.1rem;
+    }
+
+    .logo {
+      width: 8rem;
+      height: 8rem;
+      display: flex;
+      place-items: center;
+      place-content: center;
+      border-radius: 50%;
+      position: absolute;
+      background-color: $bgDarkColor;
+      // top: 240px;
+
+      img {
+        aspect-ratio: 535/476;
+      }
+    }
+
+    // Mobile menu opening
+    &.open {
+      .nav-wrapper {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 5rem;
+        right: 0;
+        width: 100%;
+        background-color: $bgDarkColor;
+        z-index: 10;
+
+        .socials {
+          display: flex;
+          justify-content: center;
+          padding-bottom: .5rem;
+        }
+
+        .menu {
+          padding-left: 0;
+          display: flex;
+          align-items: center;
+
+          ul {
+            flex-direction: column;
+            align-items: center;
+            gap: -.5rem;
+          }
+          li {
+            padding: .5rem 0;
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+
+
+  }
+}
+
+@media screen and (max-width: 576px) {
+  nav {
+    .menu,
+    .socials {
+      display: none;
+    }
+
+    .logo {
+      width: 5rem;
+      height: 5rem;
+      display: flex;
+      place-items: center;
+      place-content: center;
+      padding: 1rem;
+      border-radius: 50%;
+      position: absolute;
+      background-color: $bgDarkColor;
+      
+      img {
+        aspect-ratio: 535/476;
+      }
+    }
+  }
+}
