@@ -1,11 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import campvan from "../assets/campvan.png";
+import "../styles/pages/index.scss"
 ---
 
 <Layout pageTitle="U-Night - Home">
-	<section class="bg-white w-full p-0">
+	<section id="hero" class="bg-white w-full p-0">
 		<!-- First section -->
-		<img src={campvan.src} alt="Camping car and fireplace" class="w-full xl:h-[80dvh] object-cover">
+		<div class="image-wrapper overflow-hidden w-full h-[75dvh]">
+			<img src={campvan.src} alt="Camping car and fireplace" class="h-full w-full object-cover object-center "/>
+		</div>
+		<div class="w-full bg-cinder-900 text-white px-10 py-5">
+			<h1 class="text-5xl font-heading">We're u-night</h1>
+
+		</div>
 	</section>
 </Layout>
