@@ -2,19 +2,19 @@ import React from "react";
 import clsx from "clsx";
 
 type GameCardProps = {
-  GameName: string;
-  GameTags: string[];
-  GameDescription: string;
-  GameImageUrl: string;
-  GameLink: string;
+  gameName: string;
+  gameTags: string[];
+  gameDescription: string;
+  gameImageUrl: string;
+  gameLink: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export default function GameCard({
-  GameName,
-  GameTags,
-  GameDescription,
-  GameImageUrl,
-  GameLink,
+  gameName,
+  gameTags,
+  gameDescription,
+  gameImageUrl,
+  gameLink,
   className,
   ...props
 }: GameCardProps) {
@@ -29,17 +29,17 @@ export default function GameCard({
       {...props}
     >
       <img
-        src={GameImageUrl}
-        alt={GameName}
+        src={gameImageUrl}
+        alt={gameName}
         className="rounded-t-lg"
       />
       <div className="p-6 bg-gradient-to-tr from-[#020411] to-parsley-900 text-white rounded-b-lg">
-        <h2 className="font-heading text-3xl">{GameName}</h2>
+        <h2 className="font-heading text-3xl">{gameName}</h2>
         <p className="font-light text-sm text-[#FFFF83]">
-          <em>{GameTags.join(" - ")}</em>
+          <em>{gameTags.join(" - ")}</em>
         </p>
-        <p>{GameDescription}</p>
-        <a href={GameLink} target="_blank" rel="noopener noreferrer" className="cursor-pointer text-persian-indigo-400 hover:underline">Learn more →</a>
+        <p>{gameDescription}</p>
+        <a href={gameLink} target="_blank" rel="noopener noreferrer" className="cursor-pointer text-persian-indigo-400 hover:underline">Learn more →</a>
       </div>
     </div>
   );
