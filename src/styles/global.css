@@ -78,9 +78,6 @@ body {
     --font-jersey: 'Jersey 25', cursive;
     --font-roboto: 'Roboto', sans-serif;
     --font-kanit: 'Kanit', sans-serif;
-
-
-
 }
 
 @theme {
@@ -145,7 +142,6 @@ body {
     --color-persian-indigo-800: oklch(42.392% 0.20046 302);
     --color-persian-indigo-900: oklch(36.006% 0.16716 302.59);
     --color-persian-indigo-950: oklch(31.397% 0.14302 302.74);
-
 
     --font-sans: var(--font-kanit), var(--font-roboto), "Arial", sans-serif;
     --font-heading: var(--font-jersey), var(--font-roboto), "Arial", sans-serif;
