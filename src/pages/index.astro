@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import campvan from "../assets/campvan.png";
+import GameCard from "../components/GameCard";
 import "../styles/pages/index.scss";
 ---
 
@@ -34,9 +35,20 @@ import "../styles/pages/index.scss";
         We're U-Night, a team of young and ambitious french students currently
         studying Computer Science at the Orsay's Institute of Technology.
       </p>
+      <br />
+      <p>
+        We're all gamers and love video games. We aim to produce quality video
+        games that bring people together and create memorable experiences. For
+        the moment we're working on our first ever project: FrostHorn (see
+        below). But we plan to give you more video games in the future
+      </p>
     </div>
     <!-- End section separator -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 72" class="wave-separator-reverse">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 72"
+      class="wave-separator-reverse"
+    >
       <path
         fill="#070f40"
         fill-opacity="1"
@@ -44,5 +56,21 @@ import "../styles/pages/index.scss";
         id="path1"
         style="stroke-width:0.550338"></path>
     </svg>
+  </section>
+
+  <section class="p-10 bg-white pt-15">
+    <!-- Our games section -->
+    <h1 class="text-6xl font-heading text-center">Our games</h1>
+
+    <div class="flex mt-8 justify-center">
+      <GameCard
+        GameImageUrl={campvan.src}
+        GameName="FrostHorn"
+        GameTags={["Post Apo", "Survival", "Story Rich", "Explore"]}
+        GameDescription="FrostHorn is a 2D, pixel art, post-apocalyptic survival game where players must explore, innovate, and fight for resources in a harsh, unforgiving world."
+        GameLink="https://wiki.u-night.org/"
+        client:load
+      />
+    </div>
   </section>
 </Layout>
