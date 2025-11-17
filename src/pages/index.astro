@@ -1,18 +1,48 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 import campvan from "../assets/campvan.png";
-import "../styles/pages/index.scss"
+import "../styles/pages/index.scss";
 ---
 
 <Layout pageTitle="U-Night - Home">
-	<section id="hero" class="bg-white w-full p-0">
-		<!-- First section -->
-		<div class="image-wrapper overflow-hidden w-full h-[75dvh]">
-			<img src={campvan.src} alt="Camping car and fireplace" class="h-full w-full object-cover object-center "/>
-		</div>
-		<div class="w-full bg-cinder-900 text-white px-10 py-5">
-			<h1 class="text-5xl font-heading">We're u-night</h1>
+  <section id="hero" class="bg-white w-full p-0">
+    <!-- First section -->
+    <div class="image-wrapper overflow-hidden w-full h-[75dvh]">
+      <img
+        src={campvan.src}
+        alt="Camping car and fireplace"
+        class="h-full w-full object-cover object-center"
+      />
+    </div>
 
-		</div>
-	</section>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 72"
+      class="wave-separator"
+    >
+      <path
+        fill="#070f40"
+        fill-opacity="1"
+        d="M 0,20.027292 80,15.682694 C 160,11.500518 320,2.5677024 480,0.5375196 c 160,-2.0301828 320,2.0301828 480,6.496591 160,4.4664074 320,8.5267734 400,10.8411794 l 80,2.152002 V 72 h -80 c -80,0 -240,0 -400,0 -160,0 -320,0 -480,0 -160,0 -320,0 -400,0 H 0 Z"
+        id="path1"
+        style="stroke-width:0.63721"></path>
+    </svg>
+
+    <div class="w-full bg-cinder-900 text-white px-20 hero-section">
+      <h1 class="text-6xl font-heading">We're u-night</h1>
+      <p>
+        We're U-Night, a team of young and ambitious french students currently
+        studying Computer Science at the Orsay's Institute of Technology.
+      </p>
+    </div>
+    <!-- End section separator -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 72" class="wave-separator-reverse">
+      <path
+        fill="#070f40"
+        fill-opacity="1"
+        d="m 0,67.843326 80,-4.845952 c 80,-4.845952 240,-14.537856 400,-12.932634 160,1.72637 320,14.446993 480,19.383807 160,4.755089 320,1.726371 400,0 l 80,-1.605221 V 0 h -80 C 1280,0 1120,0 960,0 800,0 640,0 480,0 320,0 160,0 80,0 H 0 Z"
+        id="path1"
+        style="stroke-width:0.550338"></path>
+    </svg>
+  </section>
 </Layout>
