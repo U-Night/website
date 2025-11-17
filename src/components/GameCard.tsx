@@ -39,7 +39,7 @@ export default function GameCard({
           <em>{gameTags.join(" - ")}</em>
         </p>
         <p>{gameDescription}</p>
-        <a href={gameLink} target="_blank" rel="noopener noreferrer" className="cursor-pointer text-persian-indigo-400 hover:underline">Learn more →</a>
+        <a href={gameLink} target="_blank" rel="noopener noreferrer" className="cursor-pointer text-persian-indigo-400 hover:underline" aria-label={`Learn more about ${gameName}`}>Learn more →</a>
       </div>
     </div>
   );
