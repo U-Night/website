@@ -19,9 +19,6 @@ export default function GameCard({
   ...props
 }: GameCardProps) {
   
-  const navToLink = () => {
-    window.open(GameLink, "_blank")
-  }
 
   return (
     <div
@@ -29,7 +26,6 @@ export default function GameCard({
         "bg-white rounded-lg shadow-lg max-w-sm hover:shadow-xl transition-shadow duration-300 cursor-pointer",
         className
       )}
-      onClick={navToLink}
       {...props}
     >
       <img
@@ -43,6 +39,7 @@ export default function GameCard({
           <em>{GameTags.join(" - ")}</em>
         </p>
         <p>{GameDescription}</p>
+        <a href={GameLink} target="_blank" rel="noopener noreferrer" className="cursor-pointer text-persian-indigo-400 hover:underline">Learn more →</a>
       </div>
     </div>
   );
