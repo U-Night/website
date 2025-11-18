@@ -1,0 +1,23 @@
+
+footer {
+  .links a {
+    height: fit-content;
+    display: block;
+    text-align: right;
+    &:hover {
+        color: var(--color-bunting-300);
+        text-decoration: underline;
+        
+    }
+  }   
+}
+
+
+@media screen and (max-width: 767px) {
+    footer {
+        .links a {
+            text-align: center;
+            width: 100%;
+        }
+    }
+}
