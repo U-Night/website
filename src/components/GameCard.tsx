@@ -23,7 +23,7 @@ export default function GameCard({
   return (
     <div
       className={clsx(
-        "bg-white rounded-lg shadow-lg max-w-sm hover:shadow-xl transition-shadow duration-300",
+        "bg-white rounded-lg shadow-lg max-w-sm hover:shadow-xl transition-shadow duration-300 hover:scale-[1.01] transform-gpu",
         className
       )}
       {...props}
