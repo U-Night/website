@@ -1,8 +1,148 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+25&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "tailwindcss";
 
 html,
 body {
     width: 100%;
     height: 100%;
+}
+
+:root {
+    /* Colors */
+    /* Background color */
+    --color-cinder-50: #eff0f5;
+    --color-cinder-100: #bfc6f8;
+    --color-cinder-200: #95a2f3;
+    --color-cinder-300: #6c7eef;
+    --color-cinder-400: #4359ea;
+    --color-cinder-500: #1935e6;
+    --color-cinder-600: #152bbc;
+    --color-cinder-700: #102293;
+    --color-cinder-800: #0c186a;
+    --color-cinder-900: #070f40;
+    --color-cinder-950: #030517;
+
+    --color-warning-50: #f5f4ef;
+    --color-warning-100: #f8f0bf;
+    --color-warning-200: #f3e795;
+    --color-warning-300: #efdd6c;
+    --color-warning-400: #ead443;
+    --color-warning-500: #e6ca19;
+    --color-warning-600: #bca615;
+    --color-warning-700: #938110;
+    --color-warning-800: #6a5d0c;
+    --color-warning-900: #403907;
+    --color-warning-950: #171403;
+
+    --color-parsley: oklch(40.302% 0.11416 142.45);
+    --color-parsley-50: oklch(93.717% 0.0519 144.28);
+    --color-parsley-100: oklch(91.48% 0.07174 143.75);
+    --color-parsley-200: oklch(86.872% 0.11012 143.47);
+    --color-parsley-300: oklch(82.667% 0.15011 143.14);
+    --color-parsley-400: oklch(78.608% 0.18342 142.8);
+    --color-parsley-500: oklch(74.9% 0.21038 142.51);
+    --color-parsley-600: oklch(68.72% 0.20486 142.41);
+    --color-parsley-700: oklch(59.721% 0.17681 142.42);
+    --color-parsley-800: oklch(50.12% 0.14526 142.43);
+    --color-parsley-900: oklch(40.302% 0.11416 142.45);
+    --color-parsley-950: oklch(33.198% 0.09127 142.57);
+
+    --color-bunting: oklch(27.358% 0.09945 271.19);
+    --color-bunting-50: oklch(89.057% 0.03724 278.93);
+    --color-bunting-100: oklch(84.945% 0.05189 277.98);
+    --color-bunting-200: oklch(76.428% 0.08236 277.31);
+    --color-bunting-300: oklch(67.845% 0.11616 275.66);
+    --color-bunting-400: oklch(59.352% 0.14949 273.99);
+    --color-bunting-500: oklch(51.138% 0.18269 271.44);
+    --color-bunting-600: oklch(44.831% 0.18302 270);
+    --color-bunting-700: oklch(39.236% 0.15706 270.11);
+    --color-bunting-800: oklch(33.404% 0.12821 270.78);
+    --color-bunting-900: oklch(27.358% 0.09945 271.19);
+    --color-bunting-950: oklch(23.088% 0.07795 271.6);
+
+    --color-persian-indigo: oklch(36.006% 0.16716 302.59);
+    --color-persian-indigo-50: oklch(97.627% 0.01179 313.22);
+    --color-persian-indigo-100: oklch(93.516% 0.03322 308.96);
+    --color-persian-indigo-200: oklch(85.138% 0.07696 309.11);
+    --color-persian-indigo-300: oklch(76.59% 0.12305 308.3);
+    --color-persian-indigo-400: oklch(68.617% 0.16839 307.25);
+    --color-persian-indigo-500: oklch(61.109% 0.20866 305.94);
+    --color-persian-indigo-600: oklch(54.406% 0.23951 303.38);
+    --color-persian-indigo-700: oklch(48.608% 0.23325 302.05);
+    --color-persian-indigo-800: oklch(42.392% 0.20046 302);
+    --color-persian-indigo-900: oklch(36.006% 0.16716 302.59);
+    --color-persian-indigo-950: oklch(31.397% 0.14302 302.74);
+
+    /* Fonts */
+    --font-jersey: 'Jersey 25', cursive;
+    --font-roboto: 'Roboto', sans-serif;
+    --font-kanit: 'Kanit', sans-serif;
+}
+
+@theme {
+    --color-cinder-50: var(--color-cinder-50);
+    --color-cinder-100: var(--color-cinder-100);
+    --color-cinder-200: var(--color-cinder-200);
+    --color-cinder-300: var(--color-cinder-300);
+    --color-cinder-400: var(--color-cinder-400);
+    --color-cinder-500: var(--color-cinder-500);
+    --color-cinder-600: var(--color-cinder-600);
+    --color-cinder-700: var(--color-cinder-700);
+    --color-cinder-800: var(--color-cinder-800);
+    --color-cinder-900: var(--color-cinder-900);
+
+    --color-warning-50: #f5f4ef;
+    --color-warning-100: #f8f0bf;
+    --color-warning-200: #f3e795;
+    --color-warning-300: #efdd6c;
+    --color-warning-400: #ead443;
+    --color-warning-500: #e6ca19;
+    --color-warning-600: #bca615;
+    --color-warning-700: #938110;
+    --color-warning-800: #6a5d0c;
+    --color-warning-900: #403907;
+    --color-warning-950: #171403;
+
+    --color-parsley: oklch(40.302% 0.11416 142.45);
+    --color-parsley-50: oklch(93.717% 0.0519 144.28);
+    --color-parsley-100: oklch(91.48% 0.07174 143.75);
+    --color-parsley-200: oklch(86.872% 0.11012 143.47);
+    --color-parsley-300: oklch(82.667% 0.15011 143.14);
+    --color-parsley-400: oklch(78.608% 0.18342 142.8);
+    --color-parsley-500: oklch(74.9% 0.21038 142.51);
+    --color-parsley-600: oklch(68.72% 0.20486 142.41);
+    --color-parsley-700: oklch(59.721% 0.17681 142.42);
+    --color-parsley-800: oklch(50.12% 0.14526 142.43);
+    --color-parsley-900: oklch(40.302% 0.11416 142.45);
+    --color-parsley-950: oklch(33.198% 0.09127 142.57);
+
+    --color-bunting: oklch(27.358% 0.09945 271.19);
+    --color-bunting-50: oklch(89.057% 0.03724 278.93);
+    --color-bunting-100: oklch(84.945% 0.05189 277.98);
+    --color-bunting-200: oklch(76.428% 0.08236 277.31);
+    --color-bunting-300: oklch(67.845% 0.11616 275.66);
+    --color-bunting-400: oklch(59.352% 0.14949 273.99);
+    --color-bunting-500: oklch(51.138% 0.18269 271.44);
+    --color-bunting-600: oklch(44.831% 0.18302 270);
+    --color-bunting-700: oklch(39.236% 0.15706 270.11);
+    --color-bunting-800: oklch(33.404% 0.12821 270.78);
+    --color-bunting-900: oklch(27.358% 0.09945 271.19);
+    --color-bunting-950: oklch(23.088% 0.07795 271.6);
+
+    --color-persian-indigo: oklch(36.006% 0.16716 302.59);
+    --color-persian-indigo-50: oklch(97.627% 0.01179 313.22);
+    --color-persian-indigo-100: oklch(93.516% 0.03322 308.96);
+    --color-persian-indigo-200: oklch(85.138% 0.07696 309.11);
+    --color-persian-indigo-300: oklch(76.59% 0.12305 308.3);
+    --color-persian-indigo-400: oklch(68.617% 0.16839 307.25);
+    --color-persian-indigo-500: oklch(61.109% 0.20866 305.94);
+    --color-persian-indigo-600: oklch(54.406% 0.23951 303.38);
+    --color-persian-indigo-700: oklch(48.608% 0.23325 302.05);
+    --color-persian-indigo-800: oklch(42.392% 0.20046 302);
+    --color-persian-indigo-900: oklch(36.006% 0.16716 302.59);
+    --color-persian-indigo-950: oklch(31.397% 0.14302 302.74);
+
+    --font-sans: var(--font-kanit), var(--font-roboto), "Arial", sans-serif;
+    --font-heading: var(--font-jersey), var(--font-roboto), "Arial", sans-serif;
 }

@@ -34,27 +34,27 @@ const Navbar = () => {
         <div className="socials">
           <ul className="flex">
             <li>
-              <a href="https://github.com/U-Night" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/U-Night" target="_blank" rel="noopener noreferrer" aria-label='Open github page'>
                 <FaGithub />
               </a>
             </li>
             <li>
-              <a href="https://discord.gg/6nQ94UkA32" target="_blank" rel="noopener noreferrer">
+              <a href="https://discord.gg/6nQ94UkA32" target="_blank" rel="noopener noreferrer" aria-label='Open Instagram page'>
                 <FaInstagram />
               </a>
             </li>
             <li>
-              <a href="https://discord.gg/6nQ94UkA32" target="_blank" rel="noopener noreferrer">
+              <a href="https://discord.gg/6nQ94UkA32" target="_blank" rel="noopener noreferrer" aria-label='Open Twitter page'>
                 <FaTwitter />
               </a>
             </li>
             <li>
-              <a href="https://discord.gg/6nQ94UkA32" target="_blank" rel="noopener noreferrer">
+              <a href="https://discord.gg/6nQ94UkA32" target="_blank" rel="noopener noreferrer" aria-label='Join discord server'>
                 <FaDiscord />
               </a>
             </li>
             <li>
-              <a href="https://discord.gg/6nQ94UkA32" target="_blank" rel="noopener noreferrer">
+              <a href="https://discord.gg/6nQ94UkA32" target="_blank" rel="noopener noreferrer" aria-label='Open RSS Flux xml'>
                 <FaRss />
               </a>
             </li>

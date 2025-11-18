@@ -1,24 +1,48 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 import NavbarReact from "../components/Navbar.tsx";
-const {pageTitle} = Astro.props;
+const { pageTitle } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="stylesheet" href="../styles/global.css">
-		<title>{pageTitle}</title>
-	</head>
-	<body class="bg-[#020411]">
-		<header class="w-full"><NavbarReact client:load /></header>
-		<main class="md:pl-[3rem] md:pr-[3rem] pl-[1.2rem] pr-[1.2rem]">
-			<slot />
-		</main>
-		<footer></footer>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+
+    <!-- SEO Tags and OpenGraph -->
+    <meta
+      name="description"
+      content="U-Night is an indie game studio created by a group of passionate computer science students. Our mission is to create immersive and engaging video games that bring people together and provide unforgettable experiences."
+    />
+	<meta name="keywords" content="videogames, video games, games, game, video, 2D, post-apo, FrostHorn, U-Night, indie game studio, gaming, adventure, action, RPG, role-playing game, computer science students, immersive experiences, engaging gameplay, videospiele, jeux videos, jeu vidéo" />
+	<meta name="author" content="U-Night" />
+
+	<meta property="og:title" content={pageTitle} />
+	<meta
+	  property="og:description"
+	  content="U-Night is an indie game studio created by a group of passionate computer science students. Our mission is to create immersive and engaging video games that bring people together and provide unforgettable experiences."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://u-night.org/" />
+	<meta property="og:image" content="https://u-night.org/logo.png" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={pageTitle} />
+	<meta name="twitter:description" content="U-Night is an indie game studio created by a group of passionate computer science students. Our mission is to create immersive and engaging video games that bring people together and provide unforgettable experiences." />
+	<meta name="twitter:image" content="https://u-night.org/logo.png" />
+	<meta name="twitter:site" content="@U-Night">
+
+	<meta name="robots" content="index, follow" />
+  </head>
+  <body class="bg-[#020411]">
+    <header class="w-full"><NavbarReact client:load /></header>
+    <main class="md:pl-[3rem] md:pr-[3rem] pl-[1.2rem] pr-[1.2rem]">
+      <slot />
+    </main>
+    <footer></footer>
+  </body>
 </html>
