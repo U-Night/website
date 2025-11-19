@@ -1,0 +1,30 @@
+---
+import logoWhite from "../assets/logo_text_white.png";
+import { FaEnvelope } from "react-icons/fa6";
+import '../styles/components/Footer.scss';
+---
+
+<footer
+  class="w-full pt-30 pb-15 bg-[#020411] md:grid md:grid-cols-2 md:px-[4rem] px-[1.5rem] text-white flex flex-col items-center gap-10"
+>
+  <div class="flex md:justify-start flex-col items-center md:items-start">
+    <img src={logoWhite.src} alt="Logo U-Night" class="h-15 my-4 object-contain w-fit" />
+    <p>&copy; {new Date().getFullYear()} U-Night. All rights reserved.</p>
+    <a
+      href="mailto:contact@u-night.org"
+      class="flex items-center gap-2 hover:text-bunting-300 hover:underline w-fit"
+      aria-label="Send an email to the U-Night team"
+      ><FaEnvelope className="my-auto" />
+      <span class="my-auto">contact@u-night.org</span></a
+    >
+  </div>
+  <div class="flex md:justify-end md:items-end items-center flex-col gap-4">
+    <div class="grid grid-cols-2 links text-right gap-x-3">
+      <a href="/legal/privacy">Privacy policy</a>
+      <a href="/legal">Legal page</a>
+      <a href="/rss.xml">RSS Feed</a>
+      <a href="mailto:admin@u-night.org">Claims</a>
+    </div>
+    <p class="text-right">U-Night&trade; Game Studios est une entreprise basée en France &hearts;</p>
+  </div>
+</footer>
