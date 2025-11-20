@@ -3,14 +3,15 @@ import Layout from "../layouts/Layout.astro";
 import campvan from "../assets/campvan.png";
 import GameCard from "../components/GameCard";
 import "../styles/pages/index.scss";
+import { Image } from "astro:assets";
 ---
 
 <Layout pageTitle="U-Night - Home">
   <section id="hero" class="bg-white w-full p-0">
     <!-- First section -->
     <div class="image-wrapper overflow-hidden w-full h-[75dvh]">
-      <img
-        src={campvan.src}
+      <Image
+        src={campvan}
         alt="Camping car and fireplace"
         class="h-full w-full object-cover object-center"
       />
