@@ -1,0 +1,20 @@
+.post-content {
+    h1, h2 { 
+        font-size: 1.7rem;
+        font-family: var(--font-heading);
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 0.6rem;
+    }
+    a {
+        color: var(--color-parsley-700);
+        text-decoration: underline;
+        cursor: pointer;
+        &:hover {
+            color: var(--color-parsley-900);
+        }
+    }
+    img {
+        width: 100%;
+        border-radius: 8px;
+    }
+}
