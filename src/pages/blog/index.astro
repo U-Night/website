@@ -5,6 +5,7 @@ import { Image } from "astro:assets";
 import garryImage from "../../assets/garry_bgless.png";
 import fhToits from "../../assets/frosthorn_sur_les_toits.png";
 import "../../styles/pages/index.scss";
+import DateSeparator from "../../components/blog/DateSeparator.astro";
 ---
 
 <Layout pageTitle="U-Night - Blog">
@@ -70,11 +71,8 @@ import "../../styles/pages/index.scss";
   <!-- Posts list section -->
   <section class="bg-white py-6 px-6">
     <h2 class="text-4xl font-heading mb-8 text-left text-cinder-700">Here's the fresh-stuff</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    <!-- Example Post Card -->
-    
-    <!-- Repeat Post Cards as needed -->
-    </div>
+
+    <DateSeparator year={2025} month="November" />
 
   </section>
 
