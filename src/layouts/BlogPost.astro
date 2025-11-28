@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import '../styles/BlogPost.scss';
 import {getTextColor} from "../libs/colors";
 const tags_colors = (await import("../config/tags_colors.json"));
+const members = (await import("../config/blog_authors.json"));
 const { frontmatter } = Astro.props;
 ---
 <Layout pageTitle={frontmatter.title}>
@@ -11,10 +12,19 @@ const { frontmatter } = Astro.props;
             <img src={frontmatter.image.url} alt={frontmatter.image.alt} class="rounded-2xl w-[55dvw]">
             <h1 class="text-5xl text-white font-heading">{frontmatter.title}</h1>
             <div class="flex flex-row gap-2">
-                {frontmatter.tags.map(elt => (
+                {frontmatter.tags.map((elt: string) => (
                     <a class="w-fit px-2 py-0.5 rounded-lg text-sm uppercase font-bold" style={`color: ${getTextColor(tags_colors[elt])}; background-color: ${tags_colors[elt]}`}>{elt}</a>
                 ))}
             </div>
+            <dir class="flex mt-3">
+                <p class="my-auto mr-2 text-white underline">Written by: </p>
+                {frontmatter.authors.map((author: string) => (
+                    <a href={members[author].url} class="hover:bg-gray-50/25 text-white/80 px-2 py-1 flex items-center gap-2 rounded-lg text-sm">
+                        <img src={members[author].avatar} alt={`${author}'s avatar`} class="w-10 rounded-full" />
+                        <p>{members.neyzzo.name}</p>
+                    </a>
+                ))}
+            </dir>
         </div>
     </section>
     <section class="bg-white">
