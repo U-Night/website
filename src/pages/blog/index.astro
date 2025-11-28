@@ -6,12 +6,45 @@ import garryImage from "../../assets/garry_bgless.png";
 import fhToits from "../../assets/frosthorn_sur_les_toits.png";
 import "../../styles/pages/index.scss";
 import DateSeparator from "../../components/blog/DateSeparator.astro";
+import PostCard from "../../components/blog/PostCard.astro";
+import BlogPost from "../../layouts/BlogPost.astro";
+
+const allPosts = Object.values(import.meta.glob('./post/*.md*', { eager: true }));
+
+const postsByMonth = allPosts.reduce((acc: any, post: any) => {
+    const date = new Date(post.frontmatter.pubDate);
+    const key = `${date.getFullYear()}-${date.getMonth()}`;
+    
+    if (!acc[key]) {
+        acc[key] = {
+            year: date.getFullYear(),
+            month: date.toLocaleString('en-GB', { month: 'long' }),
+            posts: []
+        };
+    }
+    acc[key].posts.push(post);
+    return acc;
+}, {});
+
+const sortedGroups = Object.entries(postsByMonth)
+    .sort(([keyA], [keyB]) => {
+        const [yearA, monthA] = keyA.split('-').map(Number);
+        const [yearB, monthB] = keyB.split('-').map(Number);
+        if (yearA !== yearB) return yearB - yearA;
+        return monthB - monthA;
+    })
+    .map(([_, group]: [string, any]) => {
+        group.posts.sort((a: any, b: any) => 
+            new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()
+        );
+        return group;
+    });
 ---
 
 <Layout pageTitle="U-Night - Blog">
   <section class="bg-parsley-800 flex justify-around items-center">
     <h1 class="text-5xl font-heading text-white">This is our blog</h1>
-    <Image src={garryImage} alt="Description of image" class="w-auto h-80" />
+    <Image src={garryImage} alt="Our mascot Garry reading a book" class="w-auto h-80" />
   </section>
 
   <svg
@@ -70,9 +103,27 @@ import DateSeparator from "../../components/blog/DateSeparator.astro";
   </svg>
   <!-- Posts list section -->
   <section class="bg-white py-6 px-6">
-    <h2 class="text-4xl font-heading mb-8 text-left text-cinder-700">Here's the fresh-stuff</h2>
-
-    <DateSeparator year={2025} month="November" />
+    <h2 class="text-4xl font-heading mb-8 text-left text-cinder-700">Here's the fresh stuff</h2>
+    
+    {sortedGroups.map((group) => (
+      <>
+        <DateSeparator year={group.year} month={group.month} />
+        <div class="flex flex-wrap my-4 mx-4 gap-4">
+          {group.posts.map((post: any) => (
+            <PostCard
+              title={post.frontmatter.title}
+              date={post.frontmatter.pubDate}
+              url={post.url}
+              desc={post.frontmatter.description}
+              tag={post.frontmatter.tags} 
+              imageUrl={post.frontmatter.image.url}
+              imageAlt={post.frontmatter.image.alt}
+              authors={post.frontmatter.authors}
+            />
+          ))}
+        </div>
+      </>
+    ))}
 
   </section>
 

@@ -1,0 +1,33 @@
+---
+const { title, date, url, desc, tags, imageUrl, authors } = Astro.props;
+const postDate = new Date(date);
+import { Image } from "astro:assets";
+import type { WiDayThunderstorm } from "react-icons/wi";
+const tag_colors = (await import('@/config/tags_colors.json')).default;
+const blog_authors = (await import('@/config/blog_authors.json')).default;
+
+let imgImported = null;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
+
+if (imageUrl && imageUrl.startsWith('@/assets')) {
+  const imagePath = imageUrl.replace('@/assets', '/src/assets');
+  if (images[imagePath]) {
+    imgImported = (await images[imagePath]()).default;
+  }
+}
+---
+
+<a href={url} class="w-85">
+  <Image src={imgImported ?? imageUrl} inferSize={true} alt={title} class="w-full h-48 object-cover rounded-t-md"/>
+  <div class="px-2 py-2 bg-gradient-to-b from-[#132AC0] to-[#189718] rounded-b-md">
+    <div class="flex items-center">
+        <Image src={blog_authors[authors[0]].avatar} alt={authors[0] + "'s avatar"} width={64} height={64} class="rounded-full w-7"/>
+        <p class="text-xs text-gray-200 ml-2">{blog_authors[authors[0]].name}{authors.length > 1 ? `+${authors.length - 1}`:""}</p>
+        <p class="text-gray-400 text-sm italic ml-1"> - {postDate.toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric'})}</p>
+    </div>
+    <div class="flex justify-between items-center pt-2">
+        <h2 class="font-heading text-white text-2xl">{title}</h2>
+    </div>
+    <p class="text-sm px-1 text-white py-4">{desc}</p>
+  </div>
+</a>

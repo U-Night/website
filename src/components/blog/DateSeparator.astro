@@ -1,7 +1,7 @@
 ---
 const { month, year } = Astro.props;
 ---
-<div class="flex w-full">
-    <div>{month} {year}</div>
-    <div class="border-b border-cinder-300 ml-5 h-1 w-full">
+<div class="flex w-full items-center px-2">
+    <div class="w-fit whitespace-nowrap">{month} {year}</div>
+    <div class="border-b-[2px] border-gray-300/80 ml-5 h-0 flex-1" />
 </div>
