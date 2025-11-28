@@ -11,6 +11,7 @@ const { frontmatter } = Astro.props;
         <div class="mx-auto w-fit py-12">
             <img src={frontmatter.image.url} alt={frontmatter.image.alt} class="rounded-2xl w-[55dvw]">
             <h1 class="text-5xl text-white font-heading">{frontmatter.title}</h1>
+            <p class="text-sm text-gray-400 mb-1 -mt-1 italic"> Published on {new Date(frontmatter.pubDate).toLocaleDateString('fr-FR')} (FR)</p>
             <div class="flex flex-row gap-2">
                 {frontmatter.tags.map((elt: string) => (
                     <a class="w-fit px-2 py-0.5 rounded-lg text-sm uppercase font-bold" style={`color: ${getTextColor(tags_colors[elt])}; background-color: ${tags_colors[elt]}`}>{elt}</a>

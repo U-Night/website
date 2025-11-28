@@ -25,10 +25,10 @@ const Navbar = () => {
       <div className="nav-wrapper flex w-full justify-between">
         <div className="menu">
           <ul className="flex">
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Join us</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/team">About</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/join-us">Join us</a></li>
           </ul>
         </div>
         <div className="socials">
@@ -54,7 +54,7 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a href="https://discord.gg/6nQ94UkA32" target="_blank" rel="noopener noreferrer" aria-label='Open RSS Flux xml'>
+              <a href="/rss.xml" target="_blank" rel="noopener noreferrer" aria-label='Open RSS Flux xml'>
                 <FaRss />
               </a>
             </li>
