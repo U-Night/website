@@ -1,7 +1,81 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/pages/index.scss";
+import { Image } from "astro:assets";
+import garryImage from "../../assets/garry_bgless.png";
+import fhToits from "../../assets/frosthorn_sur_les_toits.png";
+import "../../styles/pages/index.scss";
 ---
+
 <Layout pageTitle="U-Night - Blog">
-    <h1>Bienvenue sur notre blog</h1>
+  <section class="bg-parsley-800 flex justify-around items-center">
+    <h1 class="text-5xl font-heading text-white">This is our blog</h1>
+    <Image src={garryImage} alt="Description of image" class="w-auto h-80" />
+  </section>
+
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1440 72"
+    class="wave-separator"
+    aria-hidden="true"
+  >
+    <path
+      fill="#020411"
+      fill-opacity="1"
+      d="M 0,20.027292 80,15.682694 C 160,11.500518 320,2.5677024 480,0.5375196 c 160,-2.0301828 320,2.0301828 480,6.496591 160,4.4664074 320,8.5267734 400,10.8411794 l 80,2.152002 V 72 h -80 c -80,0 -240,0 -400,0 -160,0 -320,0 -480,0 -160,0 -320,0 -400,0 H 0 Z"
+      style="stroke-width:0.63721"></path>
+  </svg>
+
+  <section>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 72"
+      class="wave-separator-reverse relative z-10"
+      aria-hidden="true"
+    >
+      <path
+        fill="#020411"
+        fill-opacity="1"
+        d="m 0,67.843326 80,-4.845952 c 80,-4.845952 240,-14.537856 400,-12.932634 160,1.72637 320,14.446993 480,19.383807 160,4.755089 320,1.726371 400,0 l 80,-1.605221 V 0 h -80 C 1280,0 1120,0 960,0 800,0 640,0 480,0 320,0 160,0 80,0 H 0 Z"
+        style="stroke-width:0.550338"></path>
+    </svg>
+    <div class="w-full flex relative z-0">
+      <Image
+        src={fhToits}
+        alt="Description of image"
+        class="w-full h-100 object-cover"
+      />
+      <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-[#020411] via-[#020411]/65 to-transparent">
+        <div class="p-10 max-w-3xl h-full flex flex-col flex-wrap text-white text-center" style="place-content: center;">
+            <h2 class="text-3xl font-heading">Big announcement</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero assumenda quia laboriosam accusantium hic itaque qui atque sunt, quibusdam totam expedita, vero consequatur suscipit? Repudiandae ipsa suscipit accusamus odio dicta.</p>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1440 72"
+    class="wave-separator relative z-10"
+    aria-hidden="true"
+  >
+    <path
+      fill="white"
+      fill-opacity="1"
+      d="M 0,20.027292 80,15.682694 C 160,11.500518 320,2.5677024 480,0.5375196 c 160,-2.0301828 320,2.0301828 480,6.496591 160,4.4664074 320,8.5267734 400,10.8411794 l 80,2.152002 V 72 h -80 c -80,0 -240,0 -400,0 -160,0 -320,0 -480,0 -160,0 -320,0 -400,0 H 0 Z"
+      style="stroke-width:0.63721"></path>
+  </svg>
+  <!-- Posts list section -->
+  <section class="bg-white py-6 px-6">
+    <h2 class="text-4xl font-heading mb-8 text-left text-cinder-700">Here's the fresh-stuff</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Example Post Card -->
+    
+    <!-- Repeat Post Cards as needed -->
+    </div>
+
+  </section>
+
 </Layout>
