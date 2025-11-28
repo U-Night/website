@@ -9,6 +9,12 @@
   ],
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    "jsxImportSource": "react",
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@/*": ["./src/*"],
+      "@/config/*": ["./src/config/*"]
+    }
   }
 }

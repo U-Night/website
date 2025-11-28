@@ -2,14 +2,25 @@
 import Layout from '../layouts/Layout.astro';
 import '../styles/BlogPost.scss';
 import {getTextColor} from "../libs/colors";
+import { Image } from "astro:assets";
+
 const tags_colors = (await import("../config/tags_colors.json"));
 const members = (await import("../config/blog_authors.json"));
 const { frontmatter } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
+let imgImported = null;
+if (frontmatter.image.url && frontmatter.image.url.startsWith('@/assets')) {
+  const imagePath = frontmatter.image.url.replace('@/assets', '/src/assets');
+  if (images[imagePath]) {
+    imgImported = (await images[imagePath]()).default;
+  }
+    }
 ---
 <Layout pageTitle={frontmatter.title}>
     <section class="bg-parsley-800">
         <div class="mx-auto w-fit py-12">
-            <img src={frontmatter.image.url} alt={frontmatter.image.alt} class="rounded-2xl w-[55dvw]">
+            <Image src={imgImported ?? frontmatter.image.url} alt={frontmatter.image.alt} class="rounded-2xl w-[55dvw]" inferSize={true} />
             <h1 class="text-5xl text-white font-heading">{frontmatter.title}</h1>
             <p class="text-sm text-gray-400 mb-1 -mt-1 italic"> Published on {new Date(frontmatter.pubDate).toLocaleDateString('fr-FR')} (FR)</p>
             <div class="flex flex-row gap-2">
